@@ -1,19 +1,20 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char ch;
-    printf("Input character: ");
-    scanf("%c", &ch);
+    char str[100];
+    int vowels = 0;
 
-    if(ch >= 'a' && ch <= 'z') {
-        printf("'%c' is lowercase alphabet", ch);
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+
+    for(int i = 0; i < strlen(str); i++) {
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            vowels++;
+        }
     }
-    else if(ch >= 'A' && ch <= 'Z') {
-        printf("'%c' is uppercase alphabet", ch);
-    }
-    else {
-        printf("'%c' is not an alphabet", ch);
-    }
+
+    printf("Number of vowels in the string: %d", vowels);
 
     return 0;
 }
