@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int num, reverse = 0;
-    printf("Input number: ");
+    int num, sum = 0, digit;
+    printf("Input any number: ");
     scanf("%d", &num);
 
     for (int i = num; i > 0; i = i / 10) {
-        reverse = reverse * 10 + (i % 10);
+        digit = i % 10;
+        sum += digit;
     }
 
-    printf("Reverse of %d = %d\n", num, reverse);
+    printf("Sum of digits: %d\n", sum);
     return 0;
 }
