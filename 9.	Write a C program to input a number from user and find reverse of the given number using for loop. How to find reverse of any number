@@ -1,16 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int decimal, binary = 0, base = 1;
-    printf("Input decimal number: ");
-    scanf("%d", &decimal);
+    int num, reverse = 0;
+    printf("Input number: ");
+    scanf("%d", &num);
 
-    while (decimal > 0) {
-        binary += (decimal % 2) * base;
-        decimal = decimal / 2;
-        base = base * 10;
+    for (int i = num; i > 0; i = i / 10) {
+        reverse = reverse * 10 + (i % 10);
     }
 
-    printf("Binary number: %d\n", binary);
+    printf("Reverse of %d = %d\n", num, reverse);
     return 0;
 }
